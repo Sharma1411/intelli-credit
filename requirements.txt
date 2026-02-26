@@ -1,0 +1,10 @@
+streamlit
+pdfplumber
+requests
+groq
+reportlab
+pandas
+openpyxl
+python-docx
+Pillow
+pytesseract
