@@ -1,5 +1,6 @@
 from groq import Groq
 import json
+import os
 
 # Load your saved financial data
 with open("financial_data.json", "r") as f:
@@ -12,8 +13,9 @@ for category, lines in financial_data.items():
     for line in lines:
         financial_summary += f"  - {line}\n"
 
-# Connect to Groq AI
-client = Groq(api_key="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")
+# Connect to Groq AI - API key from environment
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "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")
+client = Groq(api_key=GROQ_API_KEY)
 
 # Ask AI to analyze
 response = client.chat.completions.create(

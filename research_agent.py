@@ -1,12 +1,14 @@
 import requests
 import json
+import os
 from groq import Groq
 
 # ==============================
-# PASTE YOUR KEYS HERE
+# API KEYS - from environment
 # ==============================
-GROQ_API_KEY = "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"
-NEWS_API_KEY = "a86cb2ce9c944edb911864ef2f8c0077"
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "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")
+NEWS_API_KEY = os.environ.get("NEWS_API_KEY", "a86cb2ce9c944edb911864ef2f8c0077")
+
 # ==============================
 # STEP 1: Search News about company
 # ==============================
